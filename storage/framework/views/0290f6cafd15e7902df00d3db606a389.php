@@ -3,7 +3,7 @@
   <!--begin::Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>@yield('judul')</title>
+    <title><?php echo $__env->yieldContent('judul'); ?></title>
 
     <!--begin::Accessibility Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
@@ -28,7 +28,7 @@
     <!--begin::Accessibility Features-->
     <!-- Skip links will be dynamically added by accessibility.js -->
     <meta name="supported-color-schemes" content="light dark" />
-    <link rel="stylesheet" href="{{asset('assets/css/adminlte.css')}}" as="style" />
+    <link rel="stylesheet" href="<?php echo e(asset('assets/css/adminlte.css')); ?>" as="style" />
     <!--end::Accessibility Features-->
 
     <!--begin::Fonts-->
@@ -59,7 +59,7 @@
     <!--end::Third Party Plugin(Bootstrap Icons)-->
 
     <!--begin::Required Plugin(AdminLTE)-->
-    <link rel="stylesheet" href="{{asset('assets/css/adminlte.css')}}" />
+    <link rel="stylesheet" href="<?php echo e(asset('assets/css/adminlte.css')); ?>" />
     <!--end::Required Plugin(AdminLTE)-->
 
     <!-- apexcharts -->
@@ -352,8 +352,8 @@
                 <li class="user-footer">
                   <a href="#" class="btn btn-outline-secondary">Profile</a>
                   <!-- <a href="#" class="btn btn-outline-danger float-end">Sign out</a> -->
-                  <form action="{{ route('logout') }}" method="POST" class="d-inline">
-                      @csrf
+                  <form action="<?php echo e(route('logout')); ?>" method="POST" class="d-inline">
+                      <?php echo csrf_field(); ?>
                       <button type="submit" class="btn btn-outline-danger float-end">
                           <i class="fas fa-sign-out-alt me-1"></i> Sign out
                       </button>
@@ -955,7 +955,7 @@
         </div>
         <!--end::App Content Header-->
         <!--begin::App Content-->
-        @yield('konten')
+        <?php echo $__env->yieldContent('konten'); ?>
         <!--end::App Content-->
       </main>
       <!--end::App Main-->
@@ -992,7 +992,7 @@
       crossorigin="anonymous"
     ></script>
     <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
-    <script src="{{asset('assets/js/adminlte.js')}}"></script>
+    <script src="<?php echo e(asset('assets/js/adminlte.js')); ?>"></script>
     <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
     <script>
       const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
@@ -1285,3 +1285,4 @@
   </body>
   <!--end::Body-->
 </html>
+<?php /**PATH C:\Users\LAB\Herd\Simpel\resources\views/layouts/app.blade.php ENDPATH**/ ?>
